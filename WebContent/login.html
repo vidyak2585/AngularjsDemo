@@ -1,0 +1,20 @@
+<html lang="en" ng-app="firstExample">
+<form name="LoginForm" novalidate ng-controller="LoginCtrl" ng-submit="submit()" >
+
+<span class="glyphicon glyphicon-user">Username</span><br/>
+<input type="text" ng-model="username" name="username" required>
+<span style="color:red;" ng-show="LoginForm.username.$dirty && LoginForm.username.$invalid">
+<span ng-show="LoginForm.username.$error.required">Username is required</span>
+</span>
+<br/>
+<span class="glyphicon glyphicon-paperclip">Password</span><br/>
+<input type="password" ng-model="password" name="password" required>
+<span style="color:red;" ng-show="LoginForm.password.$dirty && LoginForm.password.$invalid">
+<span ng-show="LoginForm.password.$error.required">Password is required</span>
+</span>
+<br/><br/>
+<button class="btn btn-success" ng-disabled="LoginForm.$invalid"><span class="glyphicon glyphicon-save"></span> Login</button> New user? <a href="register.html">Register</a>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="/js/app.js"></script>
+</html>
